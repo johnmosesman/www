@@ -1,3 +1,14 @@
-<h2 id="title">Welcome to Ember</h2>
-
+<div class="wrapper">
+  <div class="container center">
+    <div class="inline-block px2">
+      {{link-to "About" "about"}}
+    </div>
+    <div class="inline-block">
+      {{link-to "WarmBodies" "index" class="h1 bold"}}
+    </div>
+    <div class="inline-block px2">
+      {{link-to "Contact" "contact"}}
+    </div>
+  </div>
+</div>
 {{outlet}}
