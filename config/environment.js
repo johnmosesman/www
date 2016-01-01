@@ -20,6 +20,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'production') {
+    console.log('Installing GA');
     ENV.googleAnalytics = {
       webPropertyId: 'UA-71896843-1'
     };
