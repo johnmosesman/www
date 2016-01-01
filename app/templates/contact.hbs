@@ -8,12 +8,14 @@
 </p>
 <label for="email" class="block">Email</label>
 {{input type="text"
+  value=email
   class="field block col-12"
   placeholder="email"}}
 <label for="message" class="block ">Message</label>
 {{textarea
+  value=message
   type="text"
   class="field col-12"
   placeholder="Message"}}
 
-<a href="#!" class="btn btn-primary bg-alt">Contact Us</a>
+  <a href="#!" class="btn btn-primary bg-alt" {{action "submitForm"}}>Contact Us</a>

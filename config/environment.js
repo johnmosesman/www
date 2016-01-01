@@ -19,18 +19,19 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.mixpanel = {
+    enabled: false,
+    LOG_EVENT_TRACKING: true,
+    token: 'd63dbeec1a56f2949a02c06a3e54216d'
+  };
+
   if (environment === 'production') {
     console.log('Installing GA and Mixpanel');
     ENV.googleAnalytics = {
       webPropertyId: 'UA-71896843-1'
     };
 
-
-    ENV.mixpanel = {
-      enabled: true,
-      LOG_EVENT_TRACKING: true,
-      token: 'd63dbeec1a56f2949a02c06a3e54216d'
-    };
+    ENV.mixpanel.enabled = true;
   }
 
   if (environment === 'development') {
