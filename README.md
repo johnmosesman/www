@@ -1,6 +1,8 @@
 
 # Www
 
+If there is an issue with cacheing, run ./flushcache.sh
+
 Pretender.io token: VSz6Gp9xGfulPOTyFVdQ
 
 Heroku App: wb-www
