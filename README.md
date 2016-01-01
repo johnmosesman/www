@@ -1,6 +1,8 @@
 
 # Www
 
+Pretender.io token: VSz6Gp9xGfulPOTyFVdQ
+
 Heroku App: wb-www
 
 Deploy Hook: 
