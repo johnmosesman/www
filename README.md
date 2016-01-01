@@ -1,5 +1,15 @@
+
 # Www
 
+Heroku App: wb-www
+
+Deploy Hook: 
+
+```
+heroku addons:create deployhooks:http --url
+https://hooks.slack.com/services/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
+--app wb-www
+```
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
