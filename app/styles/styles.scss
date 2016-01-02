@@ -7,7 +7,7 @@ $dark-color: #474542;
 }
 
 .bg-color {
-  background-color: $bg;
+  background-color: $alt-color;
 }
 
 .background-wrapper {
@@ -34,11 +34,12 @@ $dark-color: #474542;
 
 .massive-lead {
   font-size: 72px;
+  line-height: 1;
 }
 
 .lead {
   font-size: 31px;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .navbar {
