@@ -5,14 +5,13 @@ export default Ember.Controller.extend({
 
   actions: {
     submitForm() {
-      const { trackEvent } = this.get('mixpanel');
+      // const { trackEvent } = this.get('mixpanel');
       const props = {
         email: this.get('email'),
         message: this.get('message')
       };
-
       console.log("submit form!", props);
-      trackEvent('submit', props);
+      this.get('model').save();
     }
   }
 });
