@@ -25,6 +25,14 @@ module.exports = function(environment) {
     token: 'd63dbeec1a56f2949a02c06a3e54216d'
   };
 
+  ENV.api = {
+    host: 'http://localhost:3399'
+  }
+
+  if (environment === 'production') {
+    ENV.api.host = 'https://warmbodies-api.herokuapp.com';
+  }
+
   if (environment === 'production') {
     console.log('Installing GA and Mixpanel');
     ENV.googleAnalytics = {
