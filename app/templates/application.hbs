@@ -1,14 +1,22 @@
 <div class="navbar wrapper bg-white border-bottom">
   <div class="container center py2">
-    <div class="inline-block px2">
+    <div class="inline-block px2 md-show-inline nav-link-wrapper">
       {{link-to "About" "about" class="nav-link"}}
     </div>
     <div class="inline-block">
       {{link-to "WarmBodies" "index" class="h1 bold"}}
     </div>
-    <div class="inline-block px2">
+    <div class="inline-block px2 md-show-inline nav-link-wrapper">
       {{link-to "Contact" "contact" class="nav-link"}}
     </div>
+  </div>
+</div>
+<div class="md-hide clearfix border-bottom">
+  <div class="rwd-nav-btn left">
+      {{link-to "About" "about" class="nav-link"}}
+  </div>
+  <div class="rwd-nav-btn left">
+      {{link-to "Contact" "contact" class="nav-link"}}
   </div>
 </div>
 <div class="md-show background-wrapper bg-color {{if (eq navigator.currentPath "index") "full" "half"}}">
@@ -17,8 +25,8 @@
 </div>
 <div class="container">
   <div class="clearfix">
-    <div class="col sm-col-12 md-col-6 p4 bg-color">
-      <h2 class="massive-lead mt0 white md-show">Warm<br> Bodies</h2>
+    <div class="col sm-col-12 md-col-6 p4 bg-color md-show">
+      <h2 class="massive-lead mt0 white ">Warm<br> Bodies</h2>
       <p class="lead">
       Bootstrap Your<br> Startup To Scale
       </p>

@@ -1,3 +1,11 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 $bg: #FBE4B9;
 $alt-color: #C5314C;
 $dark-color: #474542;
@@ -76,6 +84,15 @@ $light-gray-color: rgba(52,73,94,0.1);
   padding-right: 0.4em;
 }
 
+.md-show-inline {
+  display: none !important;
+}
+@media (min-width: 52em) {
+  .md-show-inline {
+    display: inline-block !important;
+  }
+}
+
 .nav-link:hover {
   background: rgba(52,73,94,0.1);
   border-bottom: 1px solid rgba(52,73,94,0.1);
@@ -113,4 +130,32 @@ $light-gray-color: rgba(52,73,94,0.1);
   margin-top: 0.2rem;
   font-size: 0.9rem;
   color: $alt-color;
+}
+
+.rwd-nav-btn {
+  background: $light-gray-color;
+  width: 50%;
+  text-align: center;
+  position: relative;
+  a {
+    display: block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+}
+
+.rwd-nav-btn a.active:after {
+  content: 'a';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateY(50%) translateX(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
 }
