@@ -12,10 +12,15 @@
   class="field block col-12"
   placeholder="Your email here"}}
 <label for="message" class="block ">Message</label>
+{{#each model.errors.email as |error|}}
+  {{error.message}}
+{{/each}}
 {{textarea
   value=model.message
   type="text"
   class="field col-12"
   placeholder="Your message here"}}
-
+{{#each model.errors.message as |error|}}
+  {{error.message}}
+{{/each}}
   <a href="#!" class="btn btn-primary bg-alt" {{action "submitForm"}}>Contact Us</a>
