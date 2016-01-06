@@ -1,6 +1,7 @@
 $bg: #FBE4B9;
 $alt-color: #C5314C;
 $dark-color: #474542;
+$light-gray-color: rgba(52,73,94,0.1);
 
 .bg-alt.bg-alt {
   background-color: $alt-color;
@@ -13,15 +14,28 @@ $dark-color: #474542;
 .background-wrapper {
   position: absolute;
   content: '';
-
   top: 0;
   left: 0;
-
   height: 100%;
   width: 100%;
-
   z-index: -1;
   transition: width  0.2s ease-in-out;
+}
+
+.shade-right {
+  position: fixed;
+  content: '';
+  top: 0;
+  right: 0;
+  width: 50%;
+  z-index: -1;
+  height: 0%;
+  background-color: $light-gray-color;
+  transition: height 0.2s ease-in-out;
+}
+
+.shade-right.active {
+  height: 100%;
 }
 
 .full {
@@ -40,6 +54,11 @@ $dark-color: #474542;
 .lead {
   font-size: 31px;
   font-weight: 300;
+  line-height: 1.1;
+}
+
+.contact__textfield {
+  height: 200px;
 }
 
 .navbar {
@@ -52,7 +71,7 @@ $dark-color: #474542;
 }
 
 .nav-link {
-  border-bottom: 1px solid rgba(52,73,94,0.4);
+  border-bottom: 1px solid $light-gray-color;
   padding-left: 0.4em;
   padding-right: 0.4em;
 }
@@ -66,4 +85,32 @@ $dark-color: #474542;
   background: $alt-color;
   color: white !important;
   border-bottom: 1px solid $alt-color;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+  input[type=text] {
+    height: 3rem;
+  }
+  label {
+   position: absolute;
+   bottom: 100%;
+   left: 0;
+   font-weight: 600;
+   font-size: 0.9rem;
+   line-height: 1.2rem;
+ }
+}
+
+.form-group.has-errors {
+  input, textarea {
+    border: 1px solid $alt-color;
+  }
+}
+
+.errors {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: $alt-color;
 }

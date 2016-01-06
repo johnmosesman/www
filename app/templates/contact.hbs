@@ -1,26 +1,30 @@
 {{outlet}}
-<p class="lead">Let's work Together</p>
-<p class="lead">
-  <a href="mailto:contact@warmbodiesinc.com">contact@warmbodiesinc.com</a>
-</p>
-<p>
-  We'd love to be a part of your next project. Send us an email at <a href="mailto:contact@warmbodiesinc.com">contact@warmbodiesinc.com</a> or send us a message below.
-</p>
-<label for="email" class="block">Email</label>
-{{input type="text"
-  value=model.email
-  class="field block col-12"
-  placeholder="Your email here"}}
-<label for="message" class="block ">Message</label>
-{{#each model.errors.email as |error|}}
-  {{error.message}}
-{{/each}}
+<p class="lead center">Let's work Together</p>
+<hr>
+<div class="form-group mt3 {{if model.errors.email "has-errors"}}">
+  <label for="email" class="block {{unless model.email "hide"}}">Email</label>
+  {{input type="text"
+    value=model.email
+    class="field block col-12"
+    placeholder="Your email here"}}
+  <div class="errors">
+    {{#each model.errors.email as |error|}}
+      {{error.message}}
+    {{/each}}
+  </div>
+</div>
+
+<div class="form-group {{if model.errors.message "has-errors"}}">
+  <label for="message" class="block {{unless model.message "hide"}}">Message</label>
 {{textarea
   value=model.message
   type="text"
-  class="field col-12"
+  class="field col-12 contact__textfield"
   placeholder="Your message here"}}
-{{#each model.errors.message as |error|}}
-  {{error.message}}
-{{/each}}
+  <div class="errors">
+    {{#each model.errors.message as |error|}}
+      {{error.message}}
+    {{/each}}
+  </div>
+</div>
   <a href="#!" class="btn btn-primary bg-alt" {{action "submitForm"}}>Contact Us</a>
