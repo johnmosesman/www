@@ -1,30 +1,37 @@
 {{outlet}}
-<p class="lead center">Let's work Together</p>
-<hr>
-<div class="form-group mt3 {{if model.errors.email "has-errors"}}">
-  <label for="email" class="block {{unless model.email "hide"}}">Email</label>
-  {{input type="text"
-    value=model.email
-    class="field block col-12"
-    placeholder="Your email here"}}
-  <div class="errors">
-    {{#each model.errors.email as |error|}}
-      {{error.message}}
-    {{/each}}
+{{#unless formSubmitted}}
+  <p class="lead center">Let's work Together</p>
+  <hr>
+  <div class="form-group mt3 {{if model.errors.email "has-errors"}}">
+    <label for="email" class="block {{unless model.email "hide"}}">Email</label>
+    {{input type="text"
+      value=model.email
+      class="field block col-12"
+      placeholder="Your email here"}}
+    <div class="errors">
+      {{#each model.errors.email as |error|}}
+        {{error.message}}
+      {{/each}}
+    </div>
   </div>
-</div>
 
-<div class="form-group {{if model.errors.message "has-errors"}}">
-  <label for="message" class="block {{unless model.message "hide"}}">Message</label>
-{{textarea
-  value=model.message
-  type="text"
-  class="field col-12 contact__textfield"
-  placeholder="Your message here"}}
-  <div class="errors">
-    {{#each model.errors.message as |error|}}
-      {{error.message}}
-    {{/each}}
+  <div class="form-group {{if model.errors.message "has-errors"}}">
+    <label for="message" class="block {{unless model.message "hide"}}">Message</label>
+  {{textarea
+    value=model.message
+    type="text"
+    class="field col-12 contact__textfield"
+    placeholder="Your message here"}}
+    <div class="errors">
+      {{#each model.errors.message as |error|}}
+        {{error.message}}
+      {{/each}}
+    </div>
   </div>
-</div>
-  <a href="#!" class="btn btn-primary bg-alt" {{action "submitForm"}}>Contact Us</a>
+    <a href="#!" class="btn btn-primary bg-alt" {{action "submitForm"}}>Contact Us</a>
+
+{{else}}
+  <p class="lead center">Thanks!</p>
+  <hr>
+ <p class="center">We'll be in touch shortly.</p>
+{{/unless}}
