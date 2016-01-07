@@ -159,3 +159,7 @@ $light-gray-color: rgba(52,73,94,0.1);
   border-radius: 50%;
   background: white;
 }
+
+@media (max-width: 40em) {
+  .col { float: none !important; }
+}
